@@ -2,6 +2,7 @@
 作者：傅家鸣
 日期：2017.7.3
 功能：一个可以算数的机器人
+知识点：类，对象，成员方法，成员变量，构造方法
 */
 import java.io.*;
 public class Demo4
@@ -9,11 +10,7 @@ public class Demo4
 	public static void main(String[] args) 
 	{
 	 try{
-			Robot r1=new Robot();
-			r1.name="小茗";
-			r1.age=1;
-			r1.nation="China";
-			r1.writer="傅家鸣";
+			Robot r1=new Robot(1,"小鸣","傅家鸣");
 			//调用speak方法
 			r1.speak();
 			//调用可以传入参数的计算方法
@@ -45,9 +42,15 @@ class Robot
 {
 	int age;
 	String name;
-	String nation;
 	String writer;
-	//方法
+	//构造方法
+	public Robot(int age,String name,String writer)
+	{
+		age=age;
+		name=name;
+		writer=writer;
+	}
+	//成员方法
 	public void speak()
 	{
 		System.out.println("您好，我是一个对象。我能计算出两数相加的和。^_^");
@@ -60,5 +63,7 @@ class Robot
 		System.out.println("结果为："+result);
 		System.out.print("还需要帮忙吗？");		
 	}
+
+
 
 }
